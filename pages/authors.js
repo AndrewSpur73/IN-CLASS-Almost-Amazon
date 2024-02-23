@@ -17,15 +17,24 @@ const showAuthors = (array) => {
   array.forEach((item) => {
     domString += `
     <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">${item.email}</h6>
-        <hr>
-        <i class="btn btn-success fas fa-eye" id="view-author-btn--${item.firebaseKey}"></i>
-        <i class="fas fa-edit btn btn-info" id="update-author--${item.firebaseKey}"></i>
-        <i class="btn btn-danger fas fa-trash-alt" id="delete-author-btn--${item.firebaseKey}"></i>
-      </div>
+    <div class="card-body">
+      <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">${item.email}</h6>
+      <hr>
+      <span class="btn ${item.favorite ? 'btn-warning' : 'btn-light'}" id="fav-author-btn--${item.firebaseKey}">
+        <i class="fa fa-star" id="fav-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
+      </span>
+      <span class="btn btn-success" id="view-author-btn--${item.firebaseKey}">
+        <i class="fa fa-eye" id="view-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
+      </span>
+      <span class="btn btn-info" id="update-author--${item.firebaseKey}">
+        <i class="fa fa-edit" id="update-author-icon--${item.firebaseKey}" aria-hidden="true"></i>
+      </span>
+      <span class="btn btn-danger" id="delete-author-btn--${item.firebaseKey}">
+        <i class="fa fa-trash-alt" id="delete-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>   
+      </span>
     </div>
+  </div>
     `;
   });
   renderToDOM('#store', domString);
