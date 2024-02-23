@@ -12,10 +12,9 @@ const getBookDetails = async (firebaseKey) => {
 };
 
 const getAuthorDetails = async (firebaseKey) => {
-  console.warn(firebaseKey);
   const authorObject = await getSingleAuthor(firebaseKey);
   const authorBooks = await getAuthorBooks(firebaseKey);
-  console.warn(authorBooks);
+
   return { ...authorObject, books: authorBooks };
 };
 
