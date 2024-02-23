@@ -20,19 +20,11 @@ const showAuthors = (array) => {
     <div class="card-body">
       <h5 class="card-title">${item.first_name} ${item.last_name}</h5>
       <h6 class="card-subtitle mb-2 text-muted">${item.email}</h6>
+      <p class="card-text bold">${item.favorite ? '<span class="fa fa-star" aria-hidden="true"></span>' : '<span></span>'}</p>
       <hr>
-      <span class="btn ${item.favorite ? 'btn-warning' : 'btn-light'}" id="fav-author-btn--${item.firebaseKey}">
-        <i class="fa fa-star" id="fav-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
-      </span>
-      <span class="btn btn-success" id="view-author-btn--${item.firebaseKey}">
-        <i class="fa fa-eye" id="view-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
-      </span>
-      <span class="btn btn-info" id="update-author--${item.firebaseKey}">
-        <i class="fa fa-edit" id="update-author-icon--${item.firebaseKey}" aria-hidden="true"></i>
-      </span>
-      <span class="btn btn-danger" id="delete-author-btn--${item.firebaseKey}">
-        <i class="fa fa-trash-alt" id="delete-author-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>   
-      </span>
+      <i class="btn btn-success" id="view-author-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
+      <i class="btn btn-info" id="update-author-btn--${item.firebaseKey}"><span class="fas fa-edit"></span></i>
+      <i class="btn btn-danger" id="delete-author-btn--${item.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
     </div>
   </div>
     `;

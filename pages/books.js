@@ -19,16 +19,11 @@ const showBooks = (array) => {
     <img class="card-img-top" src=${item.image} alt=${item.title} style="height: 400px;">
     <div class="card-body" style="height: 180px;">
       <h5 class="card-title">${item.title}</h5>
-        <p class="card-text bold">${item.sale ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> $${item.price}` : `$${item.price}`}</p>
-        <hr>
-        <span class="btn btn-success" id="view-book-btn--${item.firebaseKey}">
-          <i class="fas fa-eye" id="view-book-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
-        </span>
-        <span class="btn btn-info" id="edit-book-btn--${item.firebaseKey}">
-          <i class="fas fa-edit" id="edit-book-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
-        </span>
-        <span class="btn btn-danger" id="delete-book-btn--${item.firebaseKey}">
-          <i class="fas fa-trash-alt" id="delete-book-btn-icon--${item.firebaseKey}" aria-hidden="true"></i>
+            <p class="card-text bold">${item.sale ? `<span><i class="fa fa-bell" aria-hidden="true"></i> On Sale</span> $${item.price}` : `$${item.price}`}</p>
+            <hr>
+            <i class="btn btn-success" id="view-book-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
+            <i id="edit-book-btn--${item.firebaseKey}" class="btn btn-info"><span class="fas fa-edit"></span></i>
+            <i id="delete-book-btn--${item.firebaseKey}" class="btn btn-danger"><span class="fas fa-trash-alt"></span></i>
         </span>
     </div>
   </div>`;
