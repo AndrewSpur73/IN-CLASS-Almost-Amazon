@@ -21,9 +21,9 @@ const showBooks = (array) => {
       <h5 class="card-title">${item.title}</h5>
             <p class="card-text bold">${item.sale ? `<span><i class="fa fa-bell" aria-hidden="true"></i> On Sale</span> $${item.price}` : `$${item.price}`}</p>
             <hr>
-            <i class="btn btn-success" id="view-book-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
-            <i id="edit-book-btn--${item.firebaseKey}" class="btn btn-info"><span class="fas fa-edit"></span></i>
-            <i id="delete-book-btn--${item.firebaseKey}" class="btn btn-danger"><span class="fas fa-trash-alt"></span></i>
+            <i class="btn btn-success" id="view-book-btn--${item.firebaseKey}"><span id="view-book-btn--${item.firebaseKey}" class="fas fa-eye"></span></i>
+            <i id="edit-book-btn--${item.firebaseKey}" class="btn btn-info"><span id="edit-book-btn--${item.firebaseKey}" class="fas fa-edit"></span></i>
+            <i id="delete-book-btn--${item.firebaseKey}" class="btn btn-danger"><span id="delete-book-btn--${item.firebaseKey}" class="fas fa-trash-alt"></span></i>
         </span>
     </div>
   </div>`;

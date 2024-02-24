@@ -22,9 +22,9 @@ const showAuthors = (array) => {
       <h6 class="card-subtitle mb-2 text-muted">${item.email}</h6>
       <p class="card-text bold">${item.favorite ? '<span class="fa fa-star" aria-hidden="true"></span>' : '<span></span>'}</p>
       <hr>
-      <i class="btn btn-success" id="view-author-btn--${item.firebaseKey}"><span class="fas fa-eye"></span></i>
-      <i class="btn btn-info" id="update-author-btn--${item.firebaseKey}"><span class="fas fa-edit"></span></i>
-      <i class="btn btn-danger" id="delete-author-btn--${item.firebaseKey}"><span class="fas fa-trash-alt"></span></i>
+      <i class="btn btn-success" id="view-author-btn--${item.firebaseKey}"><span id="view-author-btn--${item.firebaseKey}" class="fas fa-eye"></span></i>
+      <i class="btn btn-info" id="update-author-btn--${item.firebaseKey}"><span id="update-author-btn--${item.firebaseKey}" class="fas fa-edit"></span></i>
+      <i class="btn btn-danger" id="delete-author-btn--${item.firebaseKey}"><span id="delete-author-btn--${item.firebaseKey}" class="fas fa-trash-alt"></span></i>
     </div>
   </div>
     `;
