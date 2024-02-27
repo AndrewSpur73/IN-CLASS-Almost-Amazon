@@ -17,9 +17,9 @@ const viewAuthor = (obj) => {
         <h5 class="card-title">${book.title}</h5>
           <p class="card-text bold">${book.sale ? `<span class="badge badge-info sale-badge"><i class="fa fa-bell" aria-hidden="true"></i> Sale</span> $${book.price}` : `$${book.price}`}</p>
           <hr>
-          <i class="btn btn-success" id="view-book-btn--${book.firebaseKey}"><span class="fas fa-eye"></span></i>
-          <i id="edit-book-btn--${book.firebaseKey}" class="btn btn-info"><span class="fas fa-edit"></span></i>
-          <i id="delete-book-btn--${book.firebaseKey}" class="btn btn-danger"><span class="fas fa-trash-alt"></span></i>
+          <i class="btn btn-success" id="view-book-btn--${book.firebaseKey}"><span id="view-book-btn--${book.firebaseKey}" class="fas fa-eye"></span></i>
+          <i id="edit-book-btn--${book.firebaseKey}" class="btn btn-info"><span id="edit-book-btn--${book.firebaseKey}" class="fas fa-edit"></span></i>
+          <i id="delete-book-btn--${book.firebaseKey}" class="btn btn-danger"><span id="delete-book-btn--${book.firebaseKey}" class="fas fa-trash-alt"></span></i>
       </div>
     </div>
     `;
