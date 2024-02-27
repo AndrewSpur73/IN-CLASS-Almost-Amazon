@@ -3,14 +3,15 @@ import renderToDOM from '../utils/renderToDom';
 
 const emptyBooks = () => {
   const domString = '<h1>No Books</h1>';
-  renderToDOM('#store', domString);
+  renderToDOM('#book-store', domString);
 };
 
-const showBooks = (array) => {
-  clearDom();
-
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Add A Book</button>';
-  renderToDOM('#add-button', btnString);
+const showBooks = (array, clear = true) => {
+  if (clear) {
+    clearDom();
+    const btnString = '<button class="btn btn-success btn-lg mb-4" id="add-book-btn">Add A Book</button>';
+    renderToDOM('#add-button', btnString);
+  }
 
   let domString = '';
   array.forEach((item) => {
@@ -28,7 +29,7 @@ const showBooks = (array) => {
     </div>
   </div>`;
   });
-  renderToDOM('#store', domString);
+  renderToDOM('#book-store', domString);
 };
 
 export { showBooks, emptyBooks };

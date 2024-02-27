@@ -42,10 +42,10 @@ const navigationEvents = () => {
     // WHEN THE USER PRESSES ENTER, MAKE THE API CALL AND CLEAR THE INPUT
     if (e.keyCode === 13) {
       searchStore(searchValue).then(({ books, authors }) => {
-        if (books.length > 0) {
-          showBooks(books);
-        } else if (authors.length > 0) {
-          showAuthors(authors);
+        if (books.length > 0 || authors.length > 0) {
+          clearDom();
+          showAuthors(authors, false);
+          showBooks(books, false);
         } else {
           clearDom();
           const domString = '<h1>No Results</h1>';
