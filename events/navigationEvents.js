@@ -8,23 +8,23 @@ import renderToDOM from '../utils/renderToDom';
 import { searchStore } from '../api/mergedData';
 
 // navigation events
-const navigationEvents = () => {
+const navigationEvents = (uid) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-button')
     .addEventListener('click', signOut);
 
   // TODO: BOOKS ON SALE
   document.querySelector('#sale-books').addEventListener('click', () => {
-    booksOnSale().then(showBooks);
+    booksOnSale(uid).then(showBooks);
   });
 
   document.querySelector('#favorite-authors').addEventListener('click', () => {
-    favoriteAuthors().then(showAuthors);
+    favoriteAuthors(uid).then(showAuthors);
   });
 
   // TODO: ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
-    getBooks().then(showBooks);
+    getBooks(uid).then(showBooks);
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
@@ -32,7 +32,7 @@ const navigationEvents = () => {
   // 2. Convert the response to an array because that is what the makeAuthors function is expecting
   // 3. If the array is empty because there are no authors, make sure to use the emptyAuthor function
   document.querySelector('#authors').addEventListener('click', () => {
-    getAuthors().then(showAuthors);
+    getAuthors(uid).then(showAuthors);
   });
 
   // STRETCH: SEARCH
@@ -41,7 +41,7 @@ const navigationEvents = () => {
 
     // WHEN THE USER PRESSES ENTER, MAKE THE API CALL AND CLEAR THE INPUT
     if (e.keyCode === 13) {
-      searchStore(searchValue).then(({ books, authors }) => {
+      searchStore(searchValue, uid).then(({ books, authors }) => {
         if (books.length > 0 || authors.length > 0) {
           clearDom();
           showAuthors(authors, false);
