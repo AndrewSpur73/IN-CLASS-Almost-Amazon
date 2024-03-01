@@ -77,9 +77,9 @@ const domEvents = (uid) => {
       addOrderForm(uid);
     }
 
-    // ADD CLICK EVENT FOR EDITING AN AUTHOR
+    // ADD CLICK EVENT FOR EDITING AN Order
 
-    // ADD CLICK EVENT FOR DELETING AN AUTHOR`
+    // ADD CLICK EVENT FOR DELETING AN Order
     if (e.target.id.includes('delete-order-btn')) {
       const [, firebaseKey] = e.target.id.split('--');
 

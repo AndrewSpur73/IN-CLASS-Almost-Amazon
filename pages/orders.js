@@ -14,7 +14,7 @@ const showOrders = (array) => {
 
   let domString = '';
 
-  if (array) {
+  if (array.length > 0) {
     array.forEach((item) => {
       domString += `
           <div class="card">
