@@ -6,6 +6,8 @@ import { showAuthors } from '../pages/authors';
 import clearDom from '../utils/clearDom';
 import renderToDOM from '../utils/renderToDom';
 import { searchStore } from '../api/mergedData';
+import { showOrders } from '../pages/orders';
+import { getOrders } from '../api/orderData';
 
 // navigation events
 const navigationEvents = (uid) => {
@@ -25,6 +27,16 @@ const navigationEvents = (uid) => {
   // TODO: ALL BOOKS
   document.querySelector('#all-books').addEventListener('click', () => {
     getBooks(uid).then(showBooks);
+  });
+
+  // ALL BOOKS ON LOGO
+  document.querySelector('#home').addEventListener('click', () => {
+    getBooks(uid).then(showBooks);
+  });
+
+  // ALL ORDERS
+  document.querySelector('#orders').addEventListener('click', () => {
+    getOrders(uid).then(showOrders);
   });
 
   // FIXME: STUDENTS Create an event listener for the Authors
