@@ -1,10 +1,13 @@
 import { getAuthors, getSingleAuthor } from '../api/authorData';
 import { deleteBook, getBooks, getSingleBook } from '../api/bookData';
 import { deleteAuthorBooksRelationship, getAuthorDetails, getBookDetails } from '../api/mergedData';
+import { getOrders, deleteOrder } from '../api/orderData';
 import addAuthorForm from '../components/forms/addAuthorForm';
 import addBookForm from '../components/forms/addBookForm';
+import addOrderForm from '../components/forms/addOrderForm';
 import { showAuthors } from '../pages/authors';
 import { showBooks } from '../pages/books';
+import { showOrders } from '../pages/orders';
 import viewAuthor from '../pages/viewAuthor';
 import viewBook from '../pages/viewBook';
 
@@ -67,6 +70,22 @@ const domEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
 
       getSingleAuthor(firebaseKey).then((authorObj) => addAuthorForm(authorObj));
+    }
+
+    // CLICK EVENT FOR SHOWING FORM FOR ADDING AN Order
+    if (e.target.id.includes('add-order-btn')) {
+      addOrderForm(uid);
+    }
+
+    // ADD CLICK EVENT FOR EDITING AN AUTHOR
+
+    // ADD CLICK EVENT FOR DELETING AN AUTHOR`
+    if (e.target.id.includes('delete-order-btn')) {
+      const [, firebaseKey] = e.target.id.split('--');
+
+      deleteOrder(firebaseKey).then(() => {
+        getOrders(uid).then(showOrders);
+      });
     }
   });
 };
